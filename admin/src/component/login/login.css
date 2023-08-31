@@ -1,0 +1,87 @@
+.admin_login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(210,255,82,1);
+background: -moz-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(210,255,82,1)), color-stop(100%, rgba(145,232,66,1)));
+background: -webkit-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: -o-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+background: linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1 ) 
+}
+
+.admin_login-box{
+    box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.75);
+   min-width: 25%;
+    min-height: 50%;
+    background-color: white;
+    margin: 0rem 1rem;
+}
+
+.admin_login-title{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+    font-weight: 700;
+    font-family: monospace;
+}
+
+.admin_login-field{
+    margin: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin_login-field input{
+    font-size: 18px;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.admin_login-button{
+    display: flex;
+    justify-content: center;
+}
+
+.admin_login-button button{
+    padding: 0.5rem 3rem;
+    font-weight: 800;
+    border-color: antiquewhite;
+    margin-bottom: 2rem;
+}
+
+.adimin-login-forgot{
+    display: flex;
+    justify-content: end;
+    padding: 1rem;
+}
+
+.adimin-login-forgot p{
+    color: blue;
+    cursor: pointer;
+}
+
+@media screen and (max-width:550px) {
+    .admin_login-box{
+        min-width: 18%; 
+    }
+
+    .admin_login-field{
+        margin: 3rem 1rem;
+    }
+}
+
+.admin_login-error{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: fantasy;
+}
