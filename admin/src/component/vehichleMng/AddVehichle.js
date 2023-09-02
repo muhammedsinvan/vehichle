@@ -1,6 +1,6 @@
-import React, {  useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './VehichleMng.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import * as Yup from 'yup';
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -10,45 +10,13 @@ const AddVehichle = () => {
 
   const navigate = useNavigate();
 
-  const params = useParams();
-
   const [baseImage1, setBaseImage1] = useState("");
   const [baseImage2, setBaseImage2] = useState("");
   const [baseImage3, setBaseImage3] = useState("");
   const [baseImage4, setBaseImage4] = useState("");
 
-  const [data,setData] = useState([])
-
-  console.log(data)
-
-
-  const adminInfo = localStorage.getItem('admintoken')
-
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${adminInfo}`,
-    },
-  };
 
  
-    useEffect(()=>{
-      if(adminInfo){
-      if(params.id){
-      (async()=>{
-        try{
-          let data = await axios.get(`/admin/getonevehichle/${params.id}`,config)
-          setData(data.data)
-          
-        }catch(error){
-          console.log(error)
-        }
-      })()
-    }
-  }else{
-    navigate('/admin')
-  }
-},[])
 
   const uploadImage1 = async (e) => {
     const file = e.target.files[0];
@@ -194,7 +162,7 @@ const AddVehichle = () => {
 
             <div className='addvehichle-box-data'>
                 <text>Image 1</text>
-                <input type='file'  {...register('image1')} defaultValue={data.image1}  onChange={(e)=>{
+                <input type='file'  {...register('image1')}  onChange={(e)=>{
                 uploadImage1(e);
               }} />
               
@@ -202,21 +170,21 @@ const AddVehichle = () => {
             </div>
             <div className='addvehichle-box-data'>
                 <text>Image 2</text>
-                <input type='file'  {...register('image2')} defaultValue={data.image2}   onChange={(e)=>{
+                <input type='file'  {...register('image2')}    onChange={(e)=>{
                 uploadImage2(e);
               }} />
               {errors.image2 && <p className='register-error-message'>{errors.image2.message}</p>} 
             </div>
             <div className='addvehichle-box-data'>
                 <text>Image 3</text>
-                <input type='file'  {...register('image3')} defaultValue={data.image3}  onChange={(e)=>{
+                <input type='file'  {...register('image3')}  onChange={(e)=>{
                 uploadImage3(e);
               }} />
               {errors.image3 && <p className='register-error-message'>{errors.image3.message}</p>} 
             </div>
             <div className='addvehichle-box-data'>
                 <text>image 4</text>
-                <input type='file'  {...register('image4')} defaultValue={data.image4}   onChange={(e)=>{
+                <input type='file'  {...register('image4')}    onChange={(e)=>{
                 uploadImage4(e);
               }} />
 

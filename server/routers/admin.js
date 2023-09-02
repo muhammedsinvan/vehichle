@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import { protect } from '../helpers/authadmin.js';
-import { addvehichle,deletevehichle,getallvehichle,getonevehichle,signin,checkmail,newpassword,getfilter,getsearch} from '../helpers/admin.js';
+import { addvehichle,deletevehichle,getallvehichle,getonevehichle,signin,checkmail,newpassword,getfilter,getsearch,updatevehichle} from '../helpers/admin.js';
 
 router.post ('/addvehichle',addvehichle);
 
@@ -20,5 +20,7 @@ router.post('/newpassword/:id/:token',newpassword)
 router.get('/getfilter/:type',protect,getfilter)
 
 router.get('/getsearch/:val',protect,getsearch)
+
+router.post('/updatevehichle/:id',updatevehichle)
 
 export default router;

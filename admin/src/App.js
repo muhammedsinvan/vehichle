@@ -5,6 +5,7 @@ import ShowVehicle from './page/showVehicle';
 import AddVehichle from './page/addVehichle';
 import Email from './component/forgetPassword/email';
 import Password from './component/forgetPassword/password';
+import EditVehichle from './page/editVehichle';
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
         <Route path='/admin' element={<Login />}/>
         <Route path='/admin/home' element={<ShowVehicle />}/>
         <Route path='/admin/addvehichle' element={<AddVehichle />}/>
-        <Route path='/admin/editvehichle/:id' element={<AddVehichle />}/>
         <Route path='/admin/forgotpassword/email' element={<Email />}/>
         <Route path='/admin/forgotpassword/password/:id/:token' element={<Password />}/>
+        <Route path='/admin/editvehichle/:id' element={<EditVehichle />}/>
       </Routes>
         
     

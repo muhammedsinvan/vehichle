@@ -205,6 +205,48 @@ const getsearch =async(req,res)=>{
   }
 }
 
+const updatevehichle = async (req,res)=>{
+  console.log(req.params.id)
+  const {
+    name,
+    description,
+    manufactur,
+    model,
+    price,
+    qty,
+    image1,
+    image2,
+    image3,
+    image4,
+  }=req.body;
+
+  const response1 = image1.startsWith('data') && await cloudinary.uploader.upload(image1);
+  const response2 = image2.startsWith('data') && await cloudinary.uploader.upload(image2);
+  const response3 = image3.startsWith('data') && await cloudinary.uploader.upload(image3);
+  const response4 = image4.startsWith('data') && await cloudinary.uploader.upload(image4);
+  try{
+    const updatevehichle =({
+     name,
+     description,
+     manufactur,
+     model,
+     price,
+     qty,
+     image1: response1 === false ? image1 : response1.secure_url,
+     image2: response2 === false ? image2 : response2.secure_url,
+     image3: response3 === false ? image3 : response3.secure_url,
+     image4: response4 === false ? image4 : response4.secure_url
+   });
+
+   const updatedvehichle = await vehichle.findByIdAndUpdate({_id:req.params.id},updatevehichle)
+    res.json(updatedvehichle);
+  }catch (errror) {
+    res.status(500);
+    res.json(errror);
+  }
+}
+
+
 export {
   addvehichle,
   getallvehichle,
@@ -214,5 +256,6 @@ export {
   checkmail,
   newpassword,
   getfilter,
-  getsearch
+  getsearch,
+  updatevehichle
 };
