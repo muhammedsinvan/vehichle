@@ -165,7 +165,7 @@ const AddVehichle = () => {
                 <input type='file'  {...register('image1')}  onChange={(e)=>{
                 uploadImage1(e);
               }} />
-              
+              {baseImage1&&<img src={baseImage1} alt="img"/>}
               { errors.image1 && <p className='register-error-message'>{errors.image1.message}</p>} 
             </div>
             <div className='addvehichle-box-data'>
@@ -173,6 +173,7 @@ const AddVehichle = () => {
                 <input type='file'  {...register('image2')}    onChange={(e)=>{
                 uploadImage2(e);
               }} />
+              {baseImage2&&<img src={baseImage2} alt="img"/>}
               {errors.image2 && <p className='register-error-message'>{errors.image2.message}</p>} 
             </div>
             <div className='addvehichle-box-data'>
@@ -180,6 +181,7 @@ const AddVehichle = () => {
                 <input type='file'  {...register('image3')}  onChange={(e)=>{
                 uploadImage3(e);
               }} />
+              {baseImage3&&<img src={baseImage3} alt="img"/>}
               {errors.image3 && <p className='register-error-message'>{errors.image3.message}</p>} 
             </div>
             <div className='addvehichle-box-data'>
@@ -187,7 +189,7 @@ const AddVehichle = () => {
                 <input type='file'  {...register('image4')}    onChange={(e)=>{
                 uploadImage4(e);
               }} />
-
+              {baseImage4&&<img src={baseImage4} alt="img"/>}
                 { errors.image4 && <p className='register-error-message'>{errors.image4.message}</p>} 
             </div>
 
